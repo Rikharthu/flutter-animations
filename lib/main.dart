@@ -2,7 +2,10 @@ import 'package:animations/screens/animated_builder_example_screen.dart';
 import 'package:animations/screens/animated_widget_example_screen.dart';
 import 'package:animations/screens/animation_example_screen.dart';
 import 'package:animations/screens/implicitly_animated_widget_example_screen.dart';
+import 'package:animations/screens/scale_transition_example.dart';
 import 'package:animations/screens/simultaneous_animations_example_screen.dart';
+import 'package:animations/screens/size_transition_example.dart';
+import 'package:animations/screens/slide_transition_example.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(new MyApp());
@@ -24,6 +27,9 @@ class _MyAppState extends State<MyApp> {
         "/example3": (context) => AnimatedBuilderExampleScreen(),
         "/example4": (context) => SimultaneousAnimationExampleScreen(),
         "/example5": (context) => ImplicitlyAnimatedWidgetExampleScreen(),
+        "/example6": (context) => ScaleTransitionExample(),
+        "/example7": (context) => SlideTransitionExample(),
+        "/example8": (context) => SizeTransitionExample(),
       },
     );
   }
@@ -36,7 +42,7 @@ class MenuScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Animations"),
       ),
-      body: Column(
+      body: ListView(
         children: <Widget>[
           MenuListItem(
               title: "Cat in a box",
@@ -67,6 +73,21 @@ class MenuScreen extends StatelessWidget {
               title: "Implicitly animated widget",
               onTap: () {
                 Navigator.of(context).pushNamed("/example5");
+              }),
+          MenuListItem(
+              title: "Scale Transition",
+              onTap: () {
+                Navigator.of(context).pushNamed("/example6");
+              }),
+          MenuListItem(
+              title: "Slide Transition",
+              onTap: () {
+                Navigator.of(context).pushNamed("/example7");
+              }),
+          MenuListItem(
+              title: "Size Transition",
+              onTap: () {
+                Navigator.of(context).pushNamed("/example8");
               }),
         ],
       ),

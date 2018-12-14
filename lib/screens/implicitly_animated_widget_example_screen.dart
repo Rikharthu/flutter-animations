@@ -62,7 +62,8 @@ class ImplicitlyAnimatedLogoState
   Widget build(BuildContext context) {
     final evaluatedValue = _size.evaluate(animation);
     print(
-        "build: evaluated value=$evaluatedValue, animation value: ${animation.value}");
+        // ignore: unnecessary_brace_in_string_interps
+        "build: evaluated value=$evaluatedValue, animation value: ${animation.value}, _size: ${_size}");
     return Center(
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 10.0),
